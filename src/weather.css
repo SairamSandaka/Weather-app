@@ -1,0 +1,212 @@
+* {
+    margin: 0px;
+    padding:0px;
+  }
+.body{
+    background-image: url("./assets/cloudy.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;;
+}
+button{
+    background: none;
+    border: none;
+}
+.head{
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+.outer-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+  }
+  
+  
+  .container {
+    width: 80%;
+    
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px lightgray;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    margin: 20px ;
+  }
+#pin{
+    width: 30px;
+}
+.location {
+    font-size: 24px; /* Larger font size for the location */
+    font-weight: bold; /* Make the text bold */
+
+}
+#search-icon{
+    width: 30px;
+}
+.location-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .location-item img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Pushes search bar to the right */
+  }
+  
+  .search-bar input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 20px; /* Rounded border */
+    outline: none;
+    font-size: 18px; /* Larger font size */
+    background-color: rgba(211, 211, 211, 0.5); /* Semi-transparent background */
+    margin-right: 10px; /* Optional: Adjust spacing */
+    width: 25vw;
+  }
+  
+  .search-bar img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  .loading-block{
+    padding: 100px;
+    border-top: 1px solid gray ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container #loading {
+    
+    width: 200px; /* Ensure this width is applied */
+  }
+  /* weather block */
+  .weather-details{
+    display: flex;
+    border-radius: 5px;
+    box-shadow: 0 0 5px lightgray;
+    margin: 30px 0px 20px 0px;
+
+  }
+  .temp-block{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+
+  }
+  .temperature img {
+    width: 100%; /* Make the temperature image fill its container */
+    max-width: 100px; /* Set a max-width to control its size */
+    height: auto; /* Maintain aspect ratio */
+  }
+  .temperature{
+    display: flex;
+    flex-wrap: wrap; 
+  }
+  .temperature .temp{
+    display: flex;
+    align-items: center;
+    font-size: 50px;
+    font-weight: bold;
+  }
+  .current{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  .feels-like{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .inner-temp{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 20px;
+
+  }
+  .inner-temp div span{
+    font-size: 20px;
+  }
+  .first-block{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    width: 15vw;
+
+  }
+  .feel{
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+
+/* Weather parameters section */
+.weather-parameters {
+   
+    padding: 20px; /* Padding inside the section */
+
+  }
+  
+  /* Heading for weather parameters */
+  .parameters-heading {
+    font-size: 20px; /* Adjust heading font size */
+    font-weight: bold; /* Bold font weight */
+    text-align: center; /* Center align heading */
+    margin-bottom: 10px; /* Margin bottom for spacing */
+    color: #333; /* Heading color */
+  }
+  
+  /* Parameters block */
+  .parameters-block {
+    display: flex;
+    justify-content: space-between; /* Space between columns */
+  }
+  
+  /* Individual parameter */
+  .parameter {
+    flex: 1; /* Each parameter block takes equal space */
+    padding: 10px; /* Padding inside each parameter block */
+    border-right: 1px solid black; /* Right border for separation */
+  }
+  
+  /* Last parameter in each row */
+  .parameter:last-child {
+    border-right: none; /* Remove right border from last parameter */
+  }
+  
+  .parameter span:first-child {
+    font-weight: bold; /* Bold font for parameter name */
+  }
+  
+  .parameter span:last-child {
+    color: #555; /* Lighter text color for parameter value */
+  }
+  
+  .notfound {
+    color: black;
+    font-size: 30px;
+    text-align: center;
+    margin: 100px;
+    font-weight: bold;
+}
