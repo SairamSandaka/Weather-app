@@ -22,7 +22,7 @@ const Weather = () => {
     const [loading,setloading]=useState(false);
     const options = { hour: 'numeric', minute: 'numeric' };
     const currentTime = new Date().toLocaleTimeString([], options);
-    const [city, setCity] = useState('Bhimavaram');
+    const [city, setCity] = useState('Hyderabad');
     const [weatherData, setWeatherData] = useState(null);
     const API_KEY = '7d91ce8b490d7a602ef2ed249a8e79ec';
     const background_images = {
@@ -33,51 +33,7 @@ const Weather = () => {
         "Haze":cloudy,
         "Snow":cloudy,
     }
-    // useEffect( () => {
-    //     // Request the user's location
-    //     const getlocation = async ()=>{
-    //         if (navigator.geolocation) {
-    //             navigator.geolocation.getCurrentPosition(
-    //               async (position) => {
-    //                 const { latitude, longitude } = position.coords;
-    //                 const newcity = await fetchCityName(latitude, longitude);
-    //                 console.log(newcity);
-    //                 await fetchWeatherData(newcity);
-    //               },
-    //               (error) => {
-    //                 console.error('Error getting location:', error);
-    //                 setloading(false);
-    //               }
-    //             );
-    //           } else {
-    //             console.error('Geolocation is not supported by this browser.');
-    //             setloading(false);
-    //           }
-    //     }
-    //     getlocation();
-    //     fetchWeatherData(city);
-    //   }, []);
 
-    // const fetchCityName = async (latitude, longitude) => {
-    // try {
-    //     // Replace 'YOUR_API_KEY' with your actual API key
-    //     const apiKey = 'e3ac11eff514f56ffcfa56094eb130a6';
-    //     const response = await axios.get(
-    //     `http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${apiKey}`
-    //     );
-    //     console.log(response.data);
-    //     if (response.data.length > 0) {
-    //     setCity(response.data[0].name);
-    //     console.log(city)
-    //     } else {
-    //     setCity('Unknown location');
-    //     }
-    //     return city;
-    // } catch (error) {
-    //     console.error('Error fetching city name:', error);
-    //     setCity('Unknown location');
-    // }
-    // };
     const background = weatherData && weatherData.list[0].weather[0].main ? background_images[weatherData.list[0].weather[0].main] : ''
     const color = background===rainy ? 'white' : '';
 
@@ -178,7 +134,7 @@ const Weather = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <Parameters  color={Colors} />
+                                    <Parameters  color={Colors} weatherData={weatherData}/>
                                 </div>
                                 {/* forecast */}
                                 <div>

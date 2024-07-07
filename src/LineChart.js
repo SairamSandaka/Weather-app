@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Line } from 'react-chartjs-2';
 import { Chart, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 import './Linechart.css'; // Import the CSS file
@@ -14,6 +14,21 @@ Chart.register(
 );
 
 const Linechart = (props) => {
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup the event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     const formatDate = (dateString) => {
         const date = new Date(dateString);
         const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -56,6 +71,7 @@ const Linechart = (props) => {
 
     const options = {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
             legend: {
                 position: 'top',
@@ -84,11 +100,9 @@ const Linechart = (props) => {
     };
 
     return (
-        <>
-            <div className="chart-container">
-                <Line data={graphData} options={options} />
-            </div>
-        </>
+        <div className="chart-container">
+            <Line data={graphData} options={options} />
+        </div>
     );
 };
 
