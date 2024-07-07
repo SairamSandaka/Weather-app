@@ -15,6 +15,8 @@ import sunny from './assets/sunny.jpg'
 import greypin from './assets/icons/greypin.png'
 import greysearch from './assets/icons/greysearch.png'
 import loadinggif from "./assets/loading.gif"
+import Linechart from './LineChart.js';
+import { Colors } from 'chart.js';
 const Weather = () => {
 
     const [loading,setloading]=useState(false);
@@ -176,13 +178,14 @@ const Weather = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <Parameters />
+                                    <Parameters  color={Colors} />
                                 </div>
                                 {/* forecast */}
                                 <div>
                                     <Forecastlist weatherData = {weatherData}/>
                                     
                                 </div>
+                                <div> <Linechart weatherData={weatherData}/></div>
                             </div>
                         ) : (
     

@@ -42,3 +42,13 @@
     align-items: center;
     padding: 10px;
 }
+@media (max-width: 560px) {
+    .forecast-block{
+        height: 100px;
+        width: 200px;
+    }
+    .forecast-img{
+        width: 100%;
+        max-width: 40px;
+    }
+}

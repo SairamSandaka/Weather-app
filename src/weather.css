@@ -10,7 +10,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    min-height: 100vh;;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
 }
 button{
     background: none;
@@ -20,6 +23,7 @@ button{
     text-align: center;
     margin: 0px;
     padding: 0px;
+    margin: 20px 0px;
 }
 .outer-container {
     display: flex;
@@ -118,7 +122,7 @@ button{
   }
   .temperature{
     display: flex;
-    flex-wrap: wrap; 
+    flex-direction: column;
   }
   .temperature .temp{
     display: flex;
@@ -199,14 +203,63 @@ button{
     font-weight: bold; /* Bold font for parameter name */
   }
   
-  .parameter span:last-child {
-    color: #555; /* Lighter text color for parameter value */
-  }
+  
   
   .notfound {
     color: black;
     font-size: 30px;
     text-align: center;
-    margin: 100px;
+    padding: 100px;
     font-weight: bold;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
 }
+
+/* Mediaqueries */
+
+@media (max-width: 560px) {
+  .location {
+    font-size: 20px; /* Slightly smaller font size for the location */
+    font-weight: bold; /* Keep it bold for readability */
+  }
+  .search-bar {
+    display: flex;
+    align-items: center;
+    margin-left: 10px; /* Pushes search bar to the right */
+  }
+  #pin, #search-icon {
+    width: 25px; /* Adjust the size of the pin and search icons */
+    height: 25px; /* Ensure aspect ratio is maintained */
+  }
+
+  .search-bar input[type="text"] {
+    padding: 8px;
+    font-size: 16px; /* Adjust the font size */
+    width: 70%; /* Adjust the width of the search bar */
+    margin-right: 5px; /* Adjust spacing */
+  }
+
+  .search-bar img {
+    width: 25px; /* Adjust the size of the search icon */
+    height: 25px; /* Ensure aspect ratio is maintained */
+  }
+  .nav{
+    margin: 0px;
+
+  }
+  .weather-details{
+    display: flex;
+    flex-direction: column;
+  }
+  .temp-block{
+    width: 100%;
+  }
+  .container #loading {
+    
+    width: 100px; /* Ensure this width is applied */
+  }
+  .notfound{
+    
+  }
+}
+
